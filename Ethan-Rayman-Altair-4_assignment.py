@@ -55,7 +55,7 @@ warnings.filterwarnings('ignore')
 
 
 worldmap = alt.topo_feature(data.world_110m.url, 'countries')
-base = alt.Chart(world_map).mark_geoshape(fill='lightgray', stroke='white').properties(width=800,height=400)
+base = alt.Chart(worldmap).mark_geoshape(fill='lightgray', stroke='white').properties(width=800,height=400)
 small_airports = df[df['type'] == 'small_airport']
 points = alt.Chart(small_airports).mark_circle(color='red', size=10).encode(
     longitude='longitude_deg:Q',
